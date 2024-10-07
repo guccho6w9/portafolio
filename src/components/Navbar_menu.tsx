@@ -7,7 +7,7 @@ const NavbarMenu = () => {
   const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
   
   return (
-    <nav className="flex justify-between items-center p-2 mt-4 bg-black text-white mx-20">
+    <nav className="flex justify-between items-center p-2 pt-4 bg-black text-white mx-4 sm:mx-20 ">
       <ul className="flex space-x-4">
         <li>
           <a href="#about" className="relative group">
