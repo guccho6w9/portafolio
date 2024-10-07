@@ -26,7 +26,7 @@ const Hero = () => {
         <hr className="h-px my-4 bg-gray-200 border-0 dark:bg-gwhite"></hr>
         <a
           href="https://drive.google.com/file/d/1MFCwAY8m4XfFrI9TJq5-vxsp2k5ld0_p/view?usp=sharing"
-          className=" inline-block bg-teal-400 text-black font-semibold py-3 px-6 rounded-lg hover:bg-teal-700 transition duration-300"
+          className=" inline-block bg-teal-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-teal-700 transition duration-300"
         >
           Descargar CV
         </a>
