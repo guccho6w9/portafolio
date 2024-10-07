@@ -1,16 +1,15 @@
 import { useState } from 'react';
 import '@/app/globals.css';
+import { useTheme } from "@/context/ThemeContext";
 
 const NavbarMenu = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const { isDarkMode, toggleDarkMode } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+  
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="flex flex-col sm:flex-row justify-between items-center p-2 pt-4 bg-black text-white mx-4 sm:mx-20">
-      {/* Contenedor para los botones de modo y menú */}
+    <nav className={`flex flex-col sm:flex-row justify-between items-center p-2 pt-4 ${isDarkMode ? 'bg-black text-white' : 'bg-fuchsia-50 text-black'} mx-4 sm:mx-20`}>
       <div className="flex items-center justify-between w-full sm:w-auto">
         {/* Botones de modo claro/oscuro */}
         <div className="flex items-center space-x-4">
@@ -66,30 +65,14 @@ const NavbarMenu = () => {
 
       {/* Menú desplegable con animación hacia abajo */}
       <ul className={`flex flex-col space-y-4 ${isMenuOpen ? 'block' : 'hidden'} sm:flex sm:flex-row sm:space-y-0 sm:space-x-6 transition-all duration-500 ease-in-out`}>
-        <li>
-          <a href="#about" className="relative group text-xl sm:text-lg">
-            <span className="hover:underline hover:text-teal-400 transition duration-300">Sobre mí</span>
-            <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-teal-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-          </a>
-        </li>
-        <li>
-          <a href="#experience" className="relative group text-xl sm:text-lg">
-            <span className="hover:underline hover:text-teal-400 transition duration-300">Experiencia</span>
-            <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-teal-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-          </a>
-        </li>
-        <li>
-          <a href="#projects" className="relative group text-xl sm:text-lg">
-            <span className="hover:underline hover:text-teal-400 transition duration-300">Proyectos</span>
-            <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-teal-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-          </a>
-        </li>
-        <li>
-          <a href="#contact" className="relative group text-xl sm:text-lg">
-            <span className="hover:underline hover:text-teal-400 transition duration-300">Contacto</span>
-            <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-teal-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
-          </a>
-        </li>
+        {['Sobre mí', 'Experiencia', 'Proyectos', 'Contacto'].map((item) => (
+          <li key={item}>
+            <a href={`#${item.toLowerCase()}`} className="relative group text-xl sm:text-lg">
+              <span className="hover:underline hover:text-teal-400 transition duration-300">{item}</span>
+              <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-teal-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );
