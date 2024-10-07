@@ -9,7 +9,7 @@ const NavbarMenu = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className={`flex flex-col sm:flex-row justify-between items-center p-2 pt-4 ${isDarkMode ? 'bg-black text-white' : 'bg-fuchsia-50 text-black'} mx-4 sm:mx-20`}>
+    <nav className={`flex flex-col sm:flex-row justify-between items-center p-2 pt-4 ${isDarkMode ? 'bg-black text-white' : 'bg-fuchsia-50 text-black'}    md:px-20  xl:mx-20`}>
       <div className="flex items-center justify-between w-full sm:w-auto">
         {/* Botones de modo claro/oscuro */}
         <div className="flex items-center space-x-4">
