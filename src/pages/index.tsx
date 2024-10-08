@@ -3,6 +3,8 @@ import Hero from "@/components/Hero";
 import Navbar_menu from "@/components/Navbar_menu";
 import BloqueInformativo from "@/components/Bloque_informativo";
 import { ThemeProvider } from "@/context/ThemeContext";
+import AboutMe from "@/components/AboutMe";
+import Experience from "@/components/Experience";
 
 export default function Home() {
   return (
@@ -11,6 +13,9 @@ export default function Home() {
         <Navbar_menu />
         <Hero />
         <BloqueInformativo />
+        <Experience />
+        <AboutMe />
+        
       </div>
     </ThemeProvider>
   );

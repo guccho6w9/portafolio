@@ -11,9 +11,9 @@ const CarruselInformativo: React.FC = () => {
     } transition-all duration-300 p-4 `}>
       {/* Cuadro de Experiencia */}
       <div
-        className={`flex flex-col items-center justify-center w-64 h-32 rounded-lg p-4 bg-transparent ${
-          isDarkMode ? 'text-white' : 'text-black'
-        } border-4 border-teal-500`}
+        className={`flex flex-col items-center justify-center shadow-lg w-64 h-32 rounded-lg p-4 bg-transparent ${
+          isDarkMode ? 'text-white border-4 border-teal-500' : 'text-black border-4 border-fuchsia-500'
+        }`}
       >
         <p className="text-6xl font-bold">+1</p>
         <p className="text-xl font-semibold">Año de experiencia</p>
@@ -21,9 +21,9 @@ const CarruselInformativo: React.FC = () => {
 
       {/* Cuadro de Proyectos */}
       <div
-        className={`flex flex-col items-center justify-center w-64 h-32 rounded-lg p-4 bg-transparent ${
-          isDarkMode ? 'text-white' : 'text-black'
-        } border-4 border-teal-500`}
+        className={`flex flex-col items-center justify-center shadow-lg w-64 h-32 rounded-lg p-4 bg-transparent ${
+          isDarkMode ?  'text-white border-4 border-teal-500' : 'text-black border-4 border-fuchsia-500'
+        } `}
       >
         <p className="text-6xl font-bold">+8</p>
         <p className="text-xl font-semibold">Proyectos</p>
