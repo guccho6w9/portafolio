@@ -81,7 +81,7 @@ const Experience = () => {
             >
               {experience.company} - {experience.duration}
             </p>
-            <p className="text-lg leading-relaxed">{experience.description}</p>
+            <p className="text-base md:text-base sm:text-lg leading-relaxed">{experience.description}</p>
           </div>
         ))}
       </div>

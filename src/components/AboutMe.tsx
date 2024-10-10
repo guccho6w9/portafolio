@@ -40,20 +40,20 @@ const AboutMe = () => {
           className={`w-full p-8 border-2 rounded-lg shadow-lg transition-transform duration-300 ${
             isDarkMode
               ? "border-teal-500 bg-gradient-to-br from-black to-teal-800 text-white" // Degradado en modo oscuro
-              : "border-fuchsia-500 bg-fuchsia-50 text-black"
-          }`} // Cambiado de border-4 a border-2
+              : " bg-white text-black"
+          }`} // 
         >
-          <p className="text-sm md:text-base">
+          <p className="text-base md:text-base sm:text-lg ">
             ¡Hola! Soy Gustavo Quiroga, aunque todos me dicen Agucho. Nací y vivo en Santiago del Estero.
             Comencé mis estudios en la Universidad Nacional de Santiago del Estero, pero debido a la pandemia tuve que hacer una pausa.
             Después, me gradué en el Instituto Tecnológico de Santiago del Estero en la carrera de Programación, y actualmente estoy cursando
-            la Tecnicatura en Ciencia de Datos e Inteligencia Artificial.
-            <p className="text-sm md:text-base">
+            la Tecnicatura en Ciencia de Datos e Inteligencia Artificial.</p>
+            <p className="text-base md:text-base sm:text-lg">
               En los últimos tres años, me he dedicado a aprender y trabajar en proyectos
               para la cursada, personales y también como freelancer. Me apasiona la programación y la cocina, pero también tengo tiempo para disfrutar de la lectura,
               tanto de novelas como de mangas. como hincha fiel del Club Atlético Boca Juniors.
             </p>
-            <p className="text-sm md:text-base"> Espero poder colaborar con vos y aportar todo lo que he aprendido. </p>
+            <p className="text-base md:text-base sm:text-lg"> Espero poder colaborar con vos y aportar todo lo que he aprendido. 
           </p>
         </div>
       </div>
