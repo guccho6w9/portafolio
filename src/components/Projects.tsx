@@ -7,29 +7,47 @@ const projects = [
     description:
       "Mi objetivo fue crear una experiencia minimalista y acogedora para los usuarios que garantiza una experiencia de usuario fluida y satisfactoria. Landing page intuitiva que permite a los usuarios explorar el menú, realizar pedidos y consultar informacion del local.",
     technologies: ["next", "typescript", "tailwind", "css3"],
-    imageUrl: "/captura_proyecto/resto_bar.jpg",
+    features: ["Crear, actualizar y borrar productos", "Carrito de compras", "Confirmacion de compra y pedido"],
+    imageUrl: "/captura_proyecto/resto_bar.webp",
     repoUrl: "https://github.com/guccho6w9/resto_bar",
     websiteUrl: "https://resto-bar-psi.vercel.app/",
   },
   {
-    title: "Proyecto 2",
-    description: "Descripción del proyecto 2.",
-    technologies: ["next", "typescript", "tailwind"],
-    imageUrl: "/path/to/image2.jpg",
-    repoUrl: "https://github.com/guccho6w9/proyecto2",
+    title: "Tienda online de libros 'Digital Books'",
+    description: "En colaboración con un equipo de compañeros, este proyecto incluyó la creación de un catálogo de libros, realizar compras y registro e inicio de sesión. Además, implementa un sistema de administración que permite gestionar el inventario de manera eficiente. ",
+    technologies: ["node", "sequelize", "express", "ejs", "sql", "bootstrap", "css3",],
+    features: ["Carrusel de productos", "Carrito de compras", "Login/Register de usuario"],
+    imageUrl: "/captura_proyecto/digital_books.webp",
+    repoUrl: "https://github.com/GaloMinguez/grupo_5_digital-books",
     websiteUrl: "https://proyecto2.com",
   },
   // Puedes agregar más proyectos aquí...
 ];
 
-type Technology = "next" | "typescript" | "tailwind" | "css3";
+type Technology = "next" | "typescript" | "express" | "tailwind" | "css3" | "node" | "sequelize" | "sql" | "ejs" | "bootstrap";
 
 const techIcons: { [key in Technology]: string } = {
   next: "/iconos/nextjs.svg",
+  node: "/iconos/nodejs.svg",
+  express: "/iconos/express.svg",
+  sequelize: "/iconos/sequelize.svg",
+  sql: "/iconos/sql.svg",
+  ejs: "/iconos/ejs.svg",
   typescript: "/iconos/typescript.svg",
+  bootstrap: "/iconos/bootstrap.svg",
   tailwind: "/iconos/tailwind.svg",
   css3: "/iconos/css3.svg",
 };
+
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  imageUrl: string;
+  repoUrl: string;
+  websiteUrl: string;
+  features: string[];
+}
 
 const ProjectCard = ({
   title,
@@ -38,7 +56,8 @@ const ProjectCard = ({
   imageUrl,
   repoUrl,
   websiteUrl,
-}: any) => {
+  features,
+}: Project) => {
   const { isDarkMode } = useTheme(); // Usamos el modo oscuro
 
   return (
@@ -56,21 +75,34 @@ const ProjectCard = ({
         className="w-full h-66 object-cover rounded-md mb-4" // Aumenta la altura de la imagen
       />
       <h3 className="text-2xl font-bold">{title}</h3>
-      <p className="mb-4 ">{description}</p>
+      <p className="mb-4 h-46 overflow-y-auto">{description}</p>
+      
+      {/**bloque de features */}
+      <div className="mb-4"> 
+        
+        <ul className="list-disc list-inside">
+          {features.map((feature: string, index: number) => (
+            <li key={index}>{feature}</li>
+          ))}
+        </ul >
+      </div>
+      {/**bloque de iconos */}
       <div className="flex space-x-2 mb-4">
-        {technologies.map((tech: Technology) => (
-          <div
-            key={tech}
+      {technologies.map((tech: string, index: number) => (
+    tech in techIcons ? (
+      <div
+        key={index}
             className={`text-2xl ${isDarkMode ? "text-white" : "text-black"}`}
           >
             <img
-              src={techIcons[tech]}
+              src={techIcons[tech as Technology]}
               alt={`${tech} icon`}
               className={`w-8 h-8 ${isDarkMode ? "filter invert" : ""}`} // Aplica el filtro invertido en modo oscuro
-            />
-          </div>
-        ))}
-      </div>
+              />
+              </div>
+            ) : null
+          ))}
+        </div>
       <div className="flex justify-between">
         <a
           href={repoUrl}
