@@ -24,8 +24,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       });
 
       res.status(200).json({ success: true });
-    } catch (error) {
-      res.status(500).json({ error: 'Error al enviar el correo' });
+    } catch (error: unknown) {
+      // Loguear el error para la depuración
+      console.error('Error al enviar el correo:', error);
+
+      // Comprobar si el error es un objeto con una propiedad 'message'
+      const errorMessage = error instanceof Error ? error.message : 'Error desconocido';
+      res.status(500).json({ error: 'Error al enviar el correo', details: errorMessage });
     }
   } else {
     res.status(405).json({ message: 'Método no permitido' });
