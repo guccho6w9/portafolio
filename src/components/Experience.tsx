@@ -44,7 +44,7 @@ const Experience = () => {
   return (
     <div
       id="experiencia"
-      className={`flex flex-col justify-center items-center h-screen sm:h-[calc(100vh-20px)] ${
+      className={`flex flex-col justify-center  items-center h-screen sm:h-[calc(100vh-20px)] ${
         isDarkMode ? "bg-black text-white" : "bg-fuchsia-50 text-black"
       }`}
     >

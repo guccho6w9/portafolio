@@ -7,7 +7,7 @@ const CarruselInformativo: React.FC = () => {
 
   return (
     <div className={`flex justify-center md:px-20 xl:mx-20 space-x-8  ${
-      isDarkMode ? 'bg-gray-950' : 'bg-fuchsia-50'
+      isDarkMode ? 'bg-black' : 'bg-fuchsia-50'
     }  p-4`}>
       {/* Cuadro de Experiencia */}
       <div

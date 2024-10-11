@@ -10,7 +10,7 @@ const Hero = () => {
     <section
       id="hero"
       className={`flex flex-col md:flex-row items-center justify-between py-16 px-8  md:px-20  xl:mx-20 ${
-        isDarkMode ? "bg-gray-950 text-white" : "bg-fuchsia-50 text-black"
+        isDarkMode ? "bg-black text-white" : "bg-fuchsia-50 text-black"
       }`}
     >
       <div className="md:w-3/4 mb-8 md:mb-0 flex flex-col items-center md:items-start">
