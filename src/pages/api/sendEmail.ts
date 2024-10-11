@@ -6,7 +6,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const { name, email, message } = req.body;
 
     // Configura el transporte SMTP con tu proveedor de correo (por ejemplo, Gmail)
-    let transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: process.env.EMAIL_USER, // Tu correo
