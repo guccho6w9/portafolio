@@ -68,6 +68,7 @@ const NavbarMenu = () => {
               </svg>
             )}
           </button>
+          {/* Botón del menú móvil 
           <button
             className={`transition duration-300 ${
               isDarkMode
@@ -76,7 +77,8 @@ const NavbarMenu = () => {
             }`}
           >
             EN / ES
-          </button>
+          </button> */}
+          
         </div>
 
         {/* Botón del menú móvil */}
@@ -107,11 +109,11 @@ const NavbarMenu = () => {
           isMenuOpen ? "block" : "hidden"
         } sm:flex sm:flex-row sm:space-y-0 sm:space-x-6 transition-all duration-500 ease-in-out`}
       >
-        {["Experiencia", "Proyectos", "Sobre mí", "Contacto"].map((item) => (
+        {["EXPERIENCIA", "PROYECTOS", "BIO", "CONTACTO"].map((item) => (
           <li key={item}>
             <button
               onClick={() => scrollToSection(item.toLowerCase())}
-              className="relative group text-xl sm:text-lg"
+              className="relative group font-extrabold font-barlow text-sm sm:text-lg"
             >
               <span
                 className={`hover:underline transition duration-300 ${

@@ -44,7 +44,7 @@ const projects = [
   {
     title: "Tienda de libros 'Digital Books'",
     description:
-      "En colaboración con un equipo de compañeros, este proyecto incluyó la creación de un catálogo de libros, realizar compras y registro e inicio de sesión. Además, implementa un sistema de administración que permite gestionar el inventario de manera eficiente. Proyecto de Digital House.",
+      "En colaboración con un equipo de compañeros, este proyecto incluyó la creación de un catálogo de libros, manejo de venta/Stock y registro e inicio de sesión. Además, implementa un sistema de administración que permite gestionar el inventario de manera eficiente. Proyecto de Digital House.",
     technologies: [
       "node",
       "sequelize",
@@ -98,6 +98,20 @@ const projects = [
     imageUrl: "/captura_proyecto/app_clima.webp",
     repoUrl: "https://github.com/guccho6w9/Weather-news-app",
     websiteUrl: "https://weather-news-app-phi.vercel.app/",
+  },
+  {
+    title: "No-Bootcamp: Pokedex competitivo",
+    description:
+      "El objetivo del proyecto fue desarrollar una aplicacion web que pueda brindar informacion sobre todos los pokemon en cuanto a formatos competitivos se refiere de manera rapida y facil. Hace uso de Pokeapi y estoy trabajando la implementacion de la api de Showdown.",
+    technologies: ["next", "typescript", "javascript", "css3", "tailwind"],
+    features: [
+      "Informacion de habilidades, tabla de tipos y stats",
+      "Busqueda por nombre y numero de pokedex",
+      "Informacion adicional de items y generaciones pasadas",
+    ],
+    imageUrl: "/captura_proyecto/pokedex.webp",
+    repoUrl: "https://github.com/guccho6w9/datamon",
+    websiteUrl: "",
   },
 ];
 
@@ -160,8 +174,8 @@ const ProjectCard = ({
       className=" py-8 px-4 mb-8  md:px-10 xl:mx-10 rounded-lg shadow-md transition duration-300 w-full md:w-[90%] lg:w-[95%] h-full"
       style={{
         background: isDarkMode
-          ? 'linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 128, 128, 0.8))'
-          : 'linear-gradient(to bottom right, rgba(255, 255, 255, 0.8), rgba(255, 105, 180, 0.8))',
+          ? 'linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(0, 128, 128, 0.8))'
+          : 'linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 105, 180, 0.6))',
         zIndex: 0,
       }}
     >
@@ -173,7 +187,7 @@ const ProjectCard = ({
       <h3 className="text-2xl font-extrabold font-barlow">{title}</h3>
       
       {/* Descripción con altura fija */}
-      <p className="mb-4 mt-2 h-32 overflow-hidden">{description}</p>
+      <p className="mb-4 mt-2 h-32 font-bold overflow-hidden">{description}</p>
 
       <div className="mb-4 font-extrabold font-barlow">
         <ul className="list-disc list-inside space-y-1">
@@ -262,7 +276,7 @@ const Projects = () => {
       
       <h2
         id="proyectos"
-        className={`text-5xl font-extrabold font-barlow mb-8 text-center ${
+        className={`text-5xl md:pt-40 font-extrabold font-barlow mb-8 text-center ${
           isDarkMode ? "text-white" : "text-black"
         }`}
         

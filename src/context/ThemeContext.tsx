@@ -8,7 +8,7 @@ interface ThemeContextType {
 
 // Valor por defecto
 const defaultContext: ThemeContextType = {
-  isDarkMode: false,
+  isDarkMode: true,
   toggleDarkMode: () => {}
 };
 

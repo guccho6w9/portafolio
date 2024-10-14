@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useEffect, useState } from "react";
+import { useMemo, useRef, useEffect, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 import { MathUtils, Mesh, ShaderMaterial } from "three";
 import vertexShader from "@/components/vertexShader";
@@ -14,6 +14,12 @@ const Blob = () => {
 
   const maxMomentum = 0.57; // Límite para el momentum máximo
   const momentumDecay = 0.97; // Factor de deceleración
+
+  const isMobile = window.innerWidth <= 768; // Consideramos móviles aquellos dispositivos con ancho <= 768px
+
+  const scrollFactorX = isMobile ? 0.0004 : 0.0008; // Desplazamiento más lento en móviles
+  const scrollFactorY = isMobile ? 0.00015 : 0.0003;
+  const scaleFactor = isMobile ? 0.0001 : 0.0002; // Escalado más lento en móviles
 
   const uniforms = useMemo(() => ({
     u_time: { value: 0 },
@@ -32,22 +38,19 @@ const Blob = () => {
         0.02
       );
 
-      // Limitar la posición en el eje Z para que no se acerque a la cámara
-      const minZ = 0; // El mínimo valor permitido en Z
-      const maxZ = -2;  // El máximo valor permitido en Z, ajusta esto si es necesario
+      const minZ = 0; 
+      const maxZ = -2;  
       const distanceFromCamera = MathUtils.clamp(
         10 - scale, 
         minZ, 
         maxZ
-      ); // Ajustar Z basado en la escala
+      ); 
 
       mesh.current.position.z = distanceFromCamera;
 
-      // Añadir un poco de momentum en la rotación
       setRotationMomentum((prev) => MathUtils.lerp(prev, 0, (1 - momentumDecay)));
       mesh.current.rotation.x += MathUtils.clamp(rotationMomentum, -maxMomentum, maxMomentum);
       
-      // Escalar el Blob
       mesh.current.scale.set(scale, scale, scale);
     }
   });
@@ -58,11 +61,10 @@ const Blob = () => {
       const scrollDelta = scrollY - lastScrollY.current;
 
       if (mesh.current) {
-        mesh.current.position.x = initialPosition.x + scrollY * 0.0011;
-        mesh.current.position.y = initialPosition.y - scrollY * 0.0003;
+        mesh.current.position.x = initialPosition.x + scrollY * scrollFactorX;
+        mesh.current.position.y = initialPosition.y - scrollY * scrollFactorY;
 
-        // Limitar el crecimiento del Blob para evitar que se acerque demasiado a la cámara
-        const newScale = Math.max(1.5, 1.9 - scrollY * 0.0002);
+        const newScale = Math.max(1.5, 1.9 - scrollY * scaleFactor);
         setScale(newScale);
 
         if (scrollDelta > 0) {
@@ -80,7 +82,7 @@ const Blob = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [initialPosition]);
+  }, [initialPosition, scrollFactorX, scrollFactorY, scaleFactor]);
 
   return (
     <mesh
@@ -90,7 +92,7 @@ const Blob = () => {
       onPointerOver={() => (hover.current = true)}
       onPointerOut={() => (hover.current = false)}
     >
-      <icosahedronGeometry args={[2.0, 80]} />
+      <icosahedronGeometry args={[2.0, 20]} />
       <shaderMaterial
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}

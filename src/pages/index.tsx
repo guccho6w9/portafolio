@@ -54,8 +54,8 @@ export default function Home() {
         }}
       >
         {/* Añadir luces a la escena */}
-        <ambientLight intensity={5.0} />
-        <pointLight position={[10, 10, 10]} intensity={1} />
+        <ambientLight intensity={1.0}  />
+        <pointLight position={[2, 0, 0]} intensity={1}  />
         <LiquidBackground />
         
       </Canvas>

@@ -97,7 +97,7 @@ void main() {
     vDisplacement = cnoise(position * vec3(0.6) + vec3(0.2 * u_time)); // Mantén la escala del nois
 
     // Reducir la intensidad para que los bultos no crezcan tanto
-    float intensity = u_intensity * 5.0;  // Reducir la intensidad a un valor menor (por ejemplo 5)
+    float intensity = u_intensity * 6.0;  // Reducir la intensidad a un valor menor (por ejemplo 5)
     vec3 newPosition = position + normal * (intensity * vDisplacement);  // Aplicar la nueva intensidad
 
     vec4 modelPosition = modelMatrix * vec4(newPosition, 1.04);

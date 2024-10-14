@@ -24,7 +24,7 @@ const Skills = () => {
 
   return (
     <section
-      className={`py-8 px-4 md:px-10    transition-colors duration-300 ${
+      className={`py-8 px-4 md:px-10  pt-40  transition-colors duration-300 ${
         isDarkMode ? 'bg-black text-white' : 'bg-white text-black'
       } flex flex-col items-center`}
       style={{

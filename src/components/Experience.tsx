@@ -44,7 +44,7 @@ const Experience = () => {
   return (
     <div
       id="experiencia"
-      className={`flex flex-col justify-center items-center h-screen sm:h-[calc(100vh-20px)] ${
+      className={`flex flex-col md:pt-20 justify-center items-center h-screen sm:h-[calc(100vh-20px)] ${
         isDarkMode ? "bg-black text-white" : "bg-fuchsia-50 text-black"
       }`}
       style={{
@@ -76,11 +76,11 @@ const Experience = () => {
           {experiences.map((experience) => (
             <div
               key={experience.id}
-              className={`mb-6 p-4 border-b rounded-xl border-gray-300 dark:border-gray-600 transition-all duration-300 ${
+              className={`mb-6 p-4 border-b rounded-xl  transition-all duration-300 ${
                 hoveredExperience === experience.id
                   ? isDarkMode
-                    ? 'bg-gradient-to-br from-gray-950 to-teal-500'
-                    : 'bg-gradient-to-br from-white to-pink-500'
+                    ? 'bg-gradient-to-br from-gray-950 to-teal-600'
+                    : 'bg-gradient-to-br from-white to-fuchsia-200'
                   : ''
               }`}
               onMouseEnter={() => setHoveredExperience(experience.id)}
