@@ -18,11 +18,7 @@ const AboutMe = () => {
     >
       {/* Imagen al lado del cuadro */}
       <div className="w-full md:w-1/3 flex justify-center md:justify-start mb-3 md:mt-0">
-        <div
-          className={`relative overflow-hidden rounded-lg border-0 ${
-            isDarkMode ? "" : ""
-          } `} 
-        >
+        <div className="relative overflow-hidden rounded-lg border-0">
           <Image
             src="/pngegg.webp"
             alt="Foto de Gustavo"
@@ -39,28 +35,38 @@ const AboutMe = () => {
         <h2 className="text-5xl font-extrabold font-barlow mb-4 text-center md:text-left md:ml-12">
           SOBRE MÍ
         </h2>
-        
 
-
-        {/* Cuadro de resumen personal con degradado */}
-        <div
-          className={`w-full p-8 border-2 rounded-lg shadow-lg transition-transform duration-300 ${
-            isDarkMode
-              ? "border-teal-500 bg-gradient-to-br from-black to-teal-800 text-white" // Degradado en modo oscuro
-              : " bg-white text-black"
-          }`} // 
-        >
-          <p className="text-base md:text-base sm:text-lg ">
-            ¡Hola! Soy Gustavo Quiroga, aunque todos me dicen Agucho. Nací y vivo en Santiago del Estero.
-            Comencé esta incursion en el mundo de la informatica aprendiendo sobre el lenguaje C en la Universidad Nacional de Santiago del Estero, pero debido a la pandemia tuve que hacer una pausa.
-            Después, me gradué en el Instituto Tecnológico de Santiago del Estero en la carrera de Programación, y actualmente estoy cursando
-            la Tecnicatura en Ciencia de Datos e Inteligencia Artificial.</p>
-            <p className="text-base md:text-base sm:text-lg">
+        {/* Cuadro de resumen personal con fondo degradado */}
+        <div className="relative w-full p-8 border-1 rounded-lg shadow-lg">
+          {/* Fondo con transparencia y degradado */}
+          <div
+            className={`absolute inset-0 rounded-lg ${
+              isDarkMode
+                ? "bg-gradient-to-br from-gray-950 to-teal-500"
+                : "bg-gradient-to-br from-white to-pink-500"
+            }`}
+            style={{
+              opacity: 0.6, // Ajuste de transparencia solo para el fondo
+              zIndex: 1,
+            }}
+          />
+          
+          {/* Contenido del cuadro (texto) */}
+          <div className="relative z-10">
+            <p className="text-base md:text-base sm:text-lg font-extrabold font-barlow ">
+              ¡Hola! Soy Gustavo Quiroga, aunque todos me dicen Agucho. Nací y vivo en Santiago del Estero.
+              Comencé esta incursión en el mundo de la informática aprendiendo sobre el lenguaje C en la Universidad Nacional de Santiago del Estero, pero debido a la pandemia tuve que hacer una pausa.
+              Después, me gradué en el Instituto Tecnológico de Santiago del Estero en la carrera de Programación, y actualmente estoy cursando
+              la Tecnicatura en Ciencia de Datos e Inteligencia Artificial.
+            </p>
+            <p className="text-base md:text-base sm:text-lg font-extrabold font-barlow">
               En los últimos tres años, me he dedicado a aprender y trabajar en proyectos
               para la cursada, personales y también como freelancer. Me apasiona la programación y la cocina, pero también tengo tiempo para disfrutar de la lectura. Hincha fiel del Club Atlético Boca Juniors.
             </p>
-            <p className="text-base md:text-base sm:text-lg"> Espero poder colaborar con vos y aportar todo lo que he aprendido 👨‍💻. 
-          </p>
+            <p className="text-base md:text-base sm:text-lg font-extrabold font-barlow">
+              Espero poder colaborar con vos y aportar todo lo que he aprendido 👨‍💻.
+            </p>
+          </div>
         </div>
       </div>
     </section>

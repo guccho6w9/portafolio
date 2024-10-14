@@ -52,7 +52,6 @@ const Experience = () => {
           ? "rgba(68, 16, 107, 0.2)" // Fondo semitransparente oscuro
           : "rgba(255, 182, 193, 0.0)", // Fondo semitransparente claro
       }}
-      
     >
       <h2 className="text-5xl font-extrabold font-barlow mb-4">EXPERIENCIA</h2>
       <div className="w-48 h-1 mb-8">
@@ -62,37 +61,43 @@ const Experience = () => {
       </div>
 
       <div
-        ref={scrollRef}
-        className={`w-full max-w-3xl h-1/2 sm:h-2/4 overflow-y-scroll ${
-          isDarkMode
-            ? "bg-black text-white shadow-md shadow-gray-500"
-            : "bg-white text-black shadow-lg"
-        } rounded-xl p-6 relative sm:mx-20`}
-        style={{ scrollbarColor: isDarkMode ? "#333 #555" : "#ccc #f1f1f1" }}
+        className={`w-full max-w-3xl h-1/2 sm:h-2/4 overflow-y-scroll relative sm:mx-20 rounded-xl p-6`}
+        style={{
+          backgroundColor: isDarkMode ? "rgba(0, 0, 0, 0.7)" : "rgba(255, 255, 255, 0.5)", // Fondo negro con transparencia para el cuadro grande
+        }}
       >
-        {experiences.map((experience) => (
-          <div
-            key={experience.id}
-            className={`mb-6 p-4 border-b rounded-xl border-gray-300 dark:border-gray-600 ${
-              hoveredExperience === experience.id
-                ? ""
-                : ""
-            }`}
-            
-            onMouseEnter={() => setHoveredExperience(experience.id)}
-            onMouseLeave={() => setHoveredExperience(null)}
-          >
-            <h3 className="text-2xl font-semibold">{experience.role}</h3>
-            <p
-              className={`text-sm mb-2 ${
-                isDarkMode ? "text-gray-200" : "text-gray-700"
+        <div
+          ref={scrollRef}
+          className={`h-full rounded-xl p-6 relative overflow-y-scroll ${
+            isDarkMode ? "rgba(0, 0, 0, 0.7)" : "rgba(255, 255, 255, 0.0)"
+          }`}
+          style={{ scrollbarColor: isDarkMode ? "#333 #555" : "#ccc #f1f1f1" }}
+        >
+          {experiences.map((experience) => (
+            <div
+              key={experience.id}
+              className={`mb-6 p-4 border-b rounded-xl border-gray-300 dark:border-gray-600 transition-all duration-300 ${
+                hoveredExperience === experience.id
+                  ? isDarkMode
+                    ? 'bg-gradient-to-br from-gray-950 to-teal-500'
+                    : 'bg-gradient-to-br from-white to-pink-500'
+                  : ''
               }`}
+              onMouseEnter={() => setHoveredExperience(experience.id)}
+              onMouseLeave={() => setHoveredExperience(null)}
             >
-              {experience.company} - {experience.duration}
-            </p>
-            <p className="text-base md:text-base sm:text-lg leading-relaxed">{experience.description}</p>
-          </div>
-        ))}
+              <h3 className="text-2xl font-extrabold font-barlow">{experience.role}</h3>
+              <p
+                className={`text-sm font-extrabold font-barlow mb-2 ${
+                  isDarkMode ? "text-gray-200" : "text-gray-700"
+                }`}
+              >
+                {experience.company} - {experience.duration}
+              </p>
+              <p className="text-base font-extrabold font-barlow md:text-base sm:text-lg leading-relaxed">{experience.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

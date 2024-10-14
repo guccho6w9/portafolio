@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="flex flex-col md:flex-row items-center justify-between py-16 px-8 md:px-20 xl:mx-20"
+      className="flex flex-col md:flex-row items-center  justify-between py-16 px-8 md:px-20 "
       style={{
         backgroundColor: isDarkMode
           ? "rgba(68, 16, 107, 0.2)" // Fondo semitransparente oscuro
@@ -39,7 +39,7 @@ const Hero = () => {
         </h2>
 
         <p
-          className={`mt-4 text-base  font-extrabold font-barlow md:text-base sm:text-lg ${
+          className={`mt-4   font-extrabold font-barlow md:text-lg sm:text-lg leading-relaxed ${
             isDarkMode ? "text-bold text-white" : "text-gray-800"
           }`}
         >
@@ -63,9 +63,9 @@ const Hero = () => {
               isDarkMode
                 ? "bg-teal-500 hover:bg-teal-700"
                 : "bg-fuchsia-500 hover:bg-fuchsia-700"
-            } text-white font-semibold py-3 px-6 rounded-lg transition duration-300`}
+            } text-white font-extrabold font-barlow py-3 px-6 rounded-lg transition duration-300`}
           >
-            Descargar CV
+            CURRICULUM
           </a>
         </div>
       </div>

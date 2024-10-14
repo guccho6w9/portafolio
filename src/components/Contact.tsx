@@ -43,7 +43,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div id="contacto" className={`py-16 px-8 md:px-20 xl:mx-20 rounded-lg shadow-lg transition-all duration-300 ${isDarkMode ? 'bg-black text-white' : 'bg-fuchsia-50 text-black'}`}
+    <div id="contacto" className={`py-16 px-8 md:px-20  rounded-lg shadow-lg transition-all duration-300 ${isDarkMode ? 'bg-black text-white' : 'bg-fuchsia-50 text-black'}`}
     style={{
       backgroundColor: isDarkMode
         ? "rgba(68, 16, 107, 0.2)" // Fondo semitransparente oscuro
@@ -63,7 +63,7 @@ const ContactForm = () => {
           {/* Nombre  */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <div className="relative">
-              <label htmlFor="name" className="block mb-1 font-medium">Nombre</label>
+              <label htmlFor="name" className="block mb-1 font-extrabold font-barlow">Nombre</label>
               <div className="flex items-center">
                 <input
                   type="text"
@@ -88,7 +88,7 @@ const ContactForm = () => {
 
             {/* Correo Electrónico */}
             <div className="relative">
-              <label htmlFor="email" className="block mb-1 font-medium">Correo Electrónico</label>
+              <label htmlFor="email" className="block mb-1 font-extrabold font-barlow">Correo Electrónico</label>
               <div className="flex items-center">
                 <input
                   type="email"
@@ -114,7 +114,7 @@ const ContactForm = () => {
 
           {/* Mensaje */}
           <div className="mb-6">
-            <label htmlFor="message" className="block mb-1 font-medium">Mensaje</label>
+            <label htmlFor="message" className="block mb-1 font-extrabold font-barlow">Mensaje</label>
             <textarea
               id="message"
               name="message"
@@ -133,7 +133,7 @@ const ContactForm = () => {
             <button
               type="button"
               onClick={handleReset}
-              className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${
+              className={`px-4 py-2 rounded-lg font-extrabold font-barlow transition-all duration-300 ${
                 isDarkMode ? 'bg-gray-600 text-white hover:bg-gray-500' : 'bg-gray-200 text-black hover:bg-gray-300'
               }`}
             >
@@ -141,7 +141,7 @@ const ContactForm = () => {
             </button>
             <button
               type="submit"
-              className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${
+              className={`px-4 py-2 rounded-lg font-extrabold font-barlow transition-all duration-300 ${
                 isDarkMode ? 'bg-teal-600 text-white hover:bg-teal-700' : 'bg-fuchsia-500 text-white hover:bg-fuchsia-600'
               }`}
             >

@@ -42,7 +42,7 @@ const projects = [
     websiteUrl: "https://resto-bar-psi.vercel.app/",
   },
   {
-    title: "Tienda online de libros 'Digital Books'",
+    title: "Tienda de libros 'Digital Books'",
     description:
       "En colaboración con un equipo de compañeros, este proyecto incluyó la creación de un catálogo de libros, realizar compras y registro e inicio de sesión. Además, implementa un sistema de administración que permite gestionar el inventario de manera eficiente. Proyecto de Digital House.",
     technologies: [
@@ -64,7 +64,7 @@ const projects = [
     websiteUrl: "",
   },
   {
-    title: "Sistema de control de stock y ventas",
+    title: "App de control de stock/ventas",
     description:
       "El objetivo del proyecto fue desarrollar un sistema de gestion de inventario que permita al cliente monitorear y gestionar productos. Proporciona herramientas para la importacion de listas de productos a la base de datos, busqueda de productos, registro de actualizaciones e historial de ventas.",
     technologies: [
@@ -155,35 +155,35 @@ const ProjectCard = ({
 }: Project) => {
   const { isDarkMode } = useTheme(); // Usamos el modo oscuro
 
-  return (<div
-    className="border py-8 px-4 mb-8 md:px-10 xl:mx-10 rounded-lg shadow-md transition duration-300 w-full md:w-[90%] lg:w-[95%]"
-    style={{
-      backgroundColor: isDarkMode
-        ? 'bg-gradient-to-br from-gray-950 to-teal-500' : 'bg-gradient-to-br from-white to-pink-500',
-        opacity: 0.8, // Ajuste de transparencia solo para el fondo
-            zIndex: 0, // Fondo semitransparente claro
-    }}
-    
-  >
+  return (
+    <div
+      className=" py-8 px-4 mb-8  md:px-10 xl:mx-10 rounded-lg shadow-md transition duration-300 w-full md:w-[90%] lg:w-[95%] h-full"
+      style={{
+        background: isDarkMode
+          ? 'linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 128, 128, 0.8))'
+          : 'linear-gradient(to bottom right, rgba(255, 255, 255, 0.8), rgba(255, 105, 180, 0.8))',
+        zIndex: 0,
+      }}
+    >
       <img
         src={imageUrl}
         alt={title}
-        className="w-full h-66 object-cover rounded-md mb-4" // Aumenta la altura de la imagen
+        className="w-full h-66 object-cover rounded-md mb-4"
       />
-      <h3 className="text-2xl font-bold">{title}</h3>
-      <p className="mb-4 mt-2 h-46 overflow-y-auto">{description}</p>
+      <h3 className="text-2xl font-extrabold font-barlow">{title}</h3>
+      
+      {/* Descripción con altura fija */}
+      <p className="mb-4 mt-2 h-32 overflow-hidden">{description}</p>
 
-      {/**bloque de features */}
-      <div className="mb-4">
-        <ul className="list-disc list-inside">
+      <div className="mb-4 font-extrabold font-barlow">
+        <ul className="list-disc list-inside space-y-1">
           {features.map((feature: string, index: number) => (
             <li key={index}>{feature}</li>
           ))}
         </ul>
       </div>
 
-      {/**bloque de iconos */}
-      <div className="flex space-x-2 mb-4">
+      <div className="flex justify-center space-x-4 mb-4">
         {technologies.map((tech: string, index: number) =>
           tech in techIcons ? (
             <div
@@ -193,25 +193,20 @@ const ProjectCard = ({
               <img
                 src={techIcons[tech as Technology]}
                 alt={`${tech} icon`}
-                className={`w-8 h-8 ${isDarkMode ? "filter invert" : ""}`}
+                className={`w-10 h-10 ${isDarkMode ? "filter invert" : ""}`}
               />
             </div>
           ) : null
         )}
       </div>
 
-      <div className="flex mt-8 justify-between">
-        {/** Si existe repoUrl o websiteUrl, mostrar los botones correspondientes */}
+      <div className="flex justify-between mt-4">
         {repoUrl ? (
           <a
             href={repoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={`inline-block ${
-              isDarkMode
-                ? "bg-teal-600 hover:bg-teal-800"
-                : "bg-pink-500 hover:bg-pink-800"
-            } text-white font-semibold py-2 px-4 rounded-lg transition duration-300`}
+            className={`inline-block ${isDarkMode ? "bg-teal-600 hover:bg-teal-800" : "bg-pink-500 hover:bg-pink-800"} text-white font-extrabold font-barlow py-2 px-4 rounded-lg transition duration-300`}
           >
             Ver repositorio
           </a>
@@ -222,17 +217,12 @@ const ProjectCard = ({
             href={websiteUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className={`inline-block ${
-              isDarkMode
-                ? "bg-teal-600 hover:bg-teal-800"
-                : "bg-pink-500 hover:bg-pink-800"
-            } text-white font-semibold py-2 px-4 rounded-lg transition duration-300`}
+            className={`inline-block ${isDarkMode ? "bg-teal-600 hover:bg-teal-800" : "bg-pink-500 hover:bg-pink-800"} text-white font-extrabold font-barlow py-2 px-4 rounded-lg transition duration-300`}
           >
             Ver sitio web
           </a>
         ) : null}
 
-        {/** Si no existe ni repoUrl ni websiteUrl, mostrar el botón "Privado" */}
         {!repoUrl && !websiteUrl && (
           <button
             className="inline-block bg-gray-600 text-white font-semibold py-2 px-4 rounded-lg cursor-not-allowed opacity-50"
@@ -245,6 +235,7 @@ const ProjectCard = ({
     </div>
   );
 };
+
 
 const Projects = () => {
   const { isDarkMode } = useTheme(); // Usamos el modo oscuro
@@ -286,7 +277,7 @@ const Projects = () => {
 
       {/* Bloque de tarjetas de proyectos */}
       <motion.div
-        className={`grid grid-cols-1 md:grid-cols-2 gap-0 transition duration-300 mx-10 md:mx-16 lg:mx-20 ${
+        className={`grid grid-cols-1 md:grid-cols-2 gap-8 transition duration-300 mx-10 md:mx-16 lg:mx-20 ${
           isDarkMode ? " text-white" : " text-black"
         }`}
         ref={ref}

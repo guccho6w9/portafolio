@@ -24,7 +24,7 @@ const Skills = () => {
 
   return (
     <section
-      className={`py-8 px-4 md:px-10 xl:mx-10  mx-10 transition-colors duration-300 ${
+      className={`py-8 px-4 md:px-10    transition-colors duration-300 ${
         isDarkMode ? 'bg-black text-white' : 'bg-white text-black'
       } flex flex-col items-center`}
       style={{
@@ -55,7 +55,7 @@ const Skills = () => {
         {/* Contenido (iconos y texto) */}
         <div className="relative z-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
           {skills.map((skill) => (
-            <div key={skill.name} className="flex flex-col items-center min-h-[150px]">
+            <div key={skill.name} className="flex flex-col font-extrabold font-barlow items-center min-h-[150px]">
               <Image 
                 src={skill.icon} 
                 alt={skill.name} 
