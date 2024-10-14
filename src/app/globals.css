@@ -40,9 +40,17 @@ p {
   @apply leading-relaxed;
 }
 
-.bg-clip-text {
-  background-clip: text;
-  -webkit-background-clip: text;
+body {
+  background: radial-gradient(circle, rgb(97, 27, 163) 0%, rgba(0,0,0,1) 90%);
+  background-attachment: fixed; /* Esto asegura que el fondo no se mueva con el scroll */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@800&display=swap');
+
+
+/* globals.css */
 

@@ -11,11 +11,16 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        customGray: '#24292e', // Para el color #24292e
-        customDarkGray: '#2b3137', // Para el color #2b3137
+        customGray: "#24292e",
+        customDarkGray: "#2b3137",
+      },
+      backgroundImage: {
+        "custom-gradient-radial": "radial-gradient(circle, #6B46C1, #000000)", // Aquí está el degradado radial
       },
     },
   },
+  darkMode: "class", // Asegúrate de que dark mode esté activado como 'class'
   plugins: [],
 };
+
 export default config;

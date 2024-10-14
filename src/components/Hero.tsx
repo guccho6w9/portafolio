@@ -9,21 +9,22 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className={`flex flex-col md:flex-row items-center justify-between py-16 px-8  md:px-20  xl:mx-20 ${
-        isDarkMode ? "bg-black text-white" : "bg-fuchsia-50 text-black"
-      }`}
+      className="flex flex-col md:flex-row items-center justify-between py-16 px-8 md:px-20 xl:mx-20"
+      style={{
+        backgroundColor: isDarkMode
+          ? "rgba(68, 16, 107, 0.2)" // Fondo semitransparente oscuro
+          : "rgba(255, 255, 255, 0.0)", // Fondo semitransparente claro
+      }}
     >
       <div className="md:w-3/4 mb-8 md:mb-0 flex flex-col items-center md:items-start">
         <h1
-          className={`text-4xl md:text-5xl font-bold bg-gradient-to-r ${
-            isDarkMode
-              ? "from-teal-400 to-teal-50"
-              : "from-fuchsia-500 to-violet-400"
+          className={`text-4xl md:text-6xl font-extrabold font-barlow bg-gradient-to-r ${
+            isDarkMode ? "bg-yellow-300" : "bg-yellow-300"
           } bg-clip-text text-transparent text-center md:text-left`}
         >
-          Gustavo Quiroga
+          GUSTAVO QUIROGA
         </h1>
-        <h2 className="text-2xl md:text-2xl mt-4 flex items-center text-center md:text-left">
+        <h2 className="text-2xl md:text-4xl mt-4 font-extrabold font-barlow flex items-center text-center md:text-left">
           <span className="mr-1">&gt;</span>
           <Typewriter
             options={{
@@ -38,19 +39,17 @@ const Hero = () => {
         </h2>
 
         <p
-          className={`mt-4 text-base md:text-base sm:text-lg ${
-            isDarkMode ? "text-gray-300" : "text-gray-800"
+          className={`mt-4 text-base  font-extrabold font-barlow md:text-base sm:text-lg ${
+            isDarkMode ? "text-bold text-white" : "text-gray-800"
           }`}
         >
           Con un año de experiencia en el desarrollo de software, mi enfoque se
           centra en crear soluciones innovadoras que aborden las necesidades
           específicas de los clientes. Aprendiendo continuamente, estoy siempre
           en busca de nuevos desafíos que me permitan ampliar mis habilidades.
-          Estoy dando mis primeros pasos en el mundo profesional, comprometido
-          en aportar valor a través de tecnologías modernas y prácticas
-          efectivas.
+    
         </p>
-        {/* Línea divisoria */}
+
         <hr
           className={`h-px my-4 ${
             isDarkMode ? "bg-white" : "bg-black"

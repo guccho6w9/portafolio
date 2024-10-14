@@ -9,10 +9,10 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      role: "Desarrollador Web Freelance",
-      company: "Corralon sanchez",
+      role: "Desarrollador Web ",
+      company: "Freelance",
       description:
-        "Trabaje en un sistema web escalable con tecnologias como Django, MySQL y JS para el control de stock y ventas. Contribuyó al diseño, codificación y prueba de varias funciones de frontend y backend.",
+        "Trabajé en un sistema web escalable con tecnologías como Django, MySQL y JS para el control de stock y ventas. Contribuí al diseño, codificación y prueba de varias funciones de frontend y backend.",
       duration: "Nov 2023 - Mar 2024",
     },
     // Puedes agregar más experiencias aquí
@@ -44,12 +44,22 @@ const Experience = () => {
   return (
     <div
       id="experiencia"
-      className={`flex flex-col justify-center  items-center h-screen sm:h-[calc(100vh-20px)] ${
+      className={`flex flex-col justify-center items-center h-screen sm:h-[calc(100vh-20px)] ${
         isDarkMode ? "bg-black text-white" : "bg-fuchsia-50 text-black"
       }`}
+      style={{
+        backgroundColor: isDarkMode
+          ? "rgba(68, 16, 107, 0.2)" // Fondo semitransparente oscuro
+          : "rgba(255, 182, 193, 0.0)", // Fondo semitransparente claro
+      }}
+      
     >
-      <h2 className="text-5xl font-bold mb-2 text-center">Experiencia</h2>
-      <hr className={`border ${isDarkMode ? "border-gray-600" : "border-gray-300"} w-1/4 mb-6`} style={{ alignSelf: 'center' }} />
+      <h2 className="text-5xl font-extrabold font-barlow mb-4">EXPERIENCIA</h2>
+      <div className="w-48 h-1 mb-8">
+        <hr
+          className={`border ${isDarkMode ? "border-white" : "border-black"}`}
+        />
+      </div>
 
       <div
         ref={scrollRef}
@@ -65,11 +75,10 @@ const Experience = () => {
             key={experience.id}
             className={`mb-6 p-4 border-b rounded-xl border-gray-300 dark:border-gray-600 ${
               hoveredExperience === experience.id
-                ? isDarkMode
-                  ? "bg-teal-900" // Color de fondo en modo oscuro
-                  : "bg-violet-200" // Color de fondo en modo claro
+                ? ""
                 : ""
             }`}
+            
             onMouseEnter={() => setHoveredExperience(experience.id)}
             onMouseLeave={() => setHoveredExperience(null)}
           >

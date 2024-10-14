@@ -10,16 +10,21 @@ const AboutMe = () => {
       className={`flex flex-col md:flex-row items-center justify-between py-16 px-8 md:px-20 xl:mx-20 ${
         isDarkMode ? "bg-black text-white" : "bg-fuchsia-50 text-black"
       }`}
+      style={{
+        backgroundColor: isDarkMode
+          ? "rgba(68, 16, 107, 0.2)" // Fondo semitransparente oscuro
+          : "rgba(255, 182, 193, 0.0)", // Fondo semitransparente claro
+      }}
     >
       {/* Imagen al lado del cuadro */}
       <div className="w-full md:w-1/3 flex justify-center md:justify-start mb-3 md:mt-0">
         <div
-          className={`relative overflow-hidden rounded-lg border-2 ${
-            isDarkMode ? "border-teal-500" : "border-fuchsia-500"
-          } shadow-lg`} 
+          className={`relative overflow-hidden rounded-lg border-0 ${
+            isDarkMode ? "" : ""
+          } `} 
         >
           <Image
-            src="/foto_perfil.png"
+            src="/pngegg.webp"
             alt="Foto de Gustavo"
             width={400}
             height={400}
@@ -31,9 +36,11 @@ const AboutMe = () => {
       {/* Contenedor para título y texto */}
       <div className="w-full md:w-2/3 flex flex-col items-start md:pl-0">
         {/* Título sobre mí */}
-        <h2 className="text-5xl font-bold mb-4 text-center md:text-left md:ml-12">
-          Sobre mí
+        <h2 className="text-5xl font-extrabold font-barlow mb-4 text-center md:text-left md:ml-12">
+          SOBRE MÍ
         </h2>
+        
+
 
         {/* Cuadro de resumen personal con degradado */}
         <div
@@ -45,15 +52,14 @@ const AboutMe = () => {
         >
           <p className="text-base md:text-base sm:text-lg ">
             ¡Hola! Soy Gustavo Quiroga, aunque todos me dicen Agucho. Nací y vivo en Santiago del Estero.
-            Comencé mis estudios en la Universidad Nacional de Santiago del Estero, pero debido a la pandemia tuve que hacer una pausa.
+            Comencé esta incursion en el mundo de la informatica aprendiendo sobre el lenguaje C en la Universidad Nacional de Santiago del Estero, pero debido a la pandemia tuve que hacer una pausa.
             Después, me gradué en el Instituto Tecnológico de Santiago del Estero en la carrera de Programación, y actualmente estoy cursando
             la Tecnicatura en Ciencia de Datos e Inteligencia Artificial.</p>
             <p className="text-base md:text-base sm:text-lg">
               En los últimos tres años, me he dedicado a aprender y trabajar en proyectos
-              para la cursada, personales y también como freelancer. Me apasiona la programación y la cocina, pero también tengo tiempo para disfrutar de la lectura,
-              tanto de novelas como de mangas. como hincha fiel del Club Atlético Boca Juniors.
+              para la cursada, personales y también como freelancer. Me apasiona la programación y la cocina, pero también tengo tiempo para disfrutar de la lectura. Hincha fiel del Club Atlético Boca Juniors.
             </p>
-            <p className="text-base md:text-base sm:text-lg"> Espero poder colaborar con vos y aportar todo lo que he aprendido. 
+            <p className="text-base md:text-base sm:text-lg"> Espero poder colaborar con vos y aportar todo lo que he aprendido 👨‍💻. 
           </p>
         </div>
       </div>
