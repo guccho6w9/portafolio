@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Image from "next/image";
+
 import { useTheme } from "@/context/ThemeContext"; // Importa el contexto de tema
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useRef } from "react";
