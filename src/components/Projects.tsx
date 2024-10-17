@@ -42,7 +42,7 @@ const projects = [
     websiteUrl: "https://resto-bar-psi.vercel.app/",
   },
   {
-    title: "Tienda de libros 'Digital Books'",
+    title: "E-commerce 'Digital Books'",
     description:
       "En colaboración con un equipo de compañeros, este proyecto incluyó la creación de un catálogo de libros, manejo de venta/Stock y registro e inicio de sesión. Además, implementa un sistema de administración que permite gestionar el inventario de manera eficiente. Proyecto de Digital House.",
     technologies: [
@@ -112,6 +112,20 @@ const projects = [
     imageUrl: "/captura_proyecto/pokedex.webp",
     repoUrl: "https://github.com/guccho6w9/datamon",
     websiteUrl: "",
+  },
+  {
+    title: "Challenge: Star Wars landing page",
+    description:
+      "Mi objetivo para el challenge fue desarrollar una landing page atractiva y moderna hecha con Next.js, Tailwind y JS como requisito. Hace uso de Swapi para traer informacion de la trilogia original de Star Wars.",
+    technologies: ["next", "javascript", "css3", "tailwind"],
+    features: [
+      "Carrusel y slider informativo en landing page",
+      "Busqueda y filtrado de personajes por distintas cualidades",
+      "Acceso a peliculas y personajes involucrados en la misma",
+    ],
+    imageUrl: "/captura_proyecto/starwars.webp",
+    repoUrl: "https://github.com/guccho6w9/Star-wars-page",
+    websiteUrl: "https://challenge-mu-seven.vercel.app/",
   },
 ];
 
