@@ -153,7 +153,7 @@ const techIcons: { [key in Technology]: string } = {
   next: "/iconos/nextjs.svg",
   node: "/iconos/nodejs.svg",
   express: "/iconos/express.svg",
-  sequelize: "/iconos/sequelize.svg",
+  sequelize: "/iconos/Sequelize.svg",
   sql: "/iconos/sql.svg",
   ejs: "/iconos/ejs.svg",
   typescript: "/iconos/typescript.svg",
