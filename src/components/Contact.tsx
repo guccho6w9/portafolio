@@ -165,7 +165,7 @@ const ContactForm = () => {
         </form>
         {successMessage && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className={`bg-white rounded-lg shadow-lg p-6 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}>
+          <div className={` rounded-lg shadow-lg p-6 ${isDarkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
             <h2 className="text-lg font-bold">¡Mensaje Enviado!</h2>
             <p>Tu mensaje ha sido enviado con éxito. Me asegurare de responderte pronto!.</p>
             <button
