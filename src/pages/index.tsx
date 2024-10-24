@@ -12,6 +12,7 @@ import ScrollToTopButton from '@/pages/ScrollToTopButton';
 import { Canvas } from '@react-three/fiber';
 import LiquidBackground from '@/components/Blob';
 import GridOverlay from '@/components/GridOverlay';
+import Head from 'next/head';  // Importamos el componente Head
 
 const HomeContent = () => {
   const { isDarkMode } = useTheme(); 
@@ -41,6 +42,11 @@ const HomeContent = () => {
 export default function Home() {
   return (
     <ThemeProvider>
+      <Head>
+        <title>Gusta Quiroga - Portafolio</title>  {/* Cambiamos el título */}
+        <meta name="description" content="Portafolio de Gusta Quiroga" />
+        <link rel="icon" href="/favicon/favicon.ico" />  {/* Ruta del favicon */}
+      </Head>
       <Canvas 
         style={{ 
           position: "fixed", 
@@ -53,16 +59,13 @@ export default function Home() {
           backgroundColor: "transparent" 
         }}
       >
-        {/* Añadir luces a la escena */}
-        <ambientLight intensity={1.0}  />
-        <pointLight position={[2, 0, 0]} intensity={1}  />
+        <ambientLight intensity={1.0} />
+        <pointLight position={[2, 0, 0]} intensity={1} />
         <LiquidBackground />
-        
       </Canvas>
       
-      <GridOverlay  />
+      <GridOverlay />
       <HomeContent />
     </ThemeProvider>
   );
 }
-
