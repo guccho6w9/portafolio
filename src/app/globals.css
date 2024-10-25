@@ -55,3 +55,6 @@ body {
 
 /* globals.css */
 
+html, body {
+  overscroll-behavior: none; /* Evita el "bouncing" del scroll en móviles */
+}
