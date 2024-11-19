@@ -86,6 +86,50 @@ const projects = [
     websiteUrl: "",
   },
   {
+    title: "E-commerce 'Digital Books'",
+    description:
+      "En colaboración con un equipo de compañeros, este proyecto incluyó la creación de un catálogo de libros, manejo de venta/Stock y registro e inicio de sesión. Además, implementa un sistema de administración que permite gestionar el inventario de manera eficiente. Proyecto de Digital House.",
+    technologies: [
+      "node",
+      "sequelize",
+      "express",
+      "ejs",
+      "sql",
+      "bootstrap",
+      "css3",
+    ],
+    features: [
+      "Carrusel de productos",
+      "Carrito de compras",
+      "Login/Register de usuario",
+    ],
+    imageUrl: "/captura_proyecto/digital_books.webp",
+    repoUrl: "https://github.com/GaloMinguez/grupo_5_digital-books",
+    websiteUrl: "",
+  },
+  {
+    title: "WebScraping lxml/requests",
+    description:
+      "Este proyecto consiste en un script de web scraping diseñado para extraer información de productos de MercadoLibre. Busca los más baratos y los más caros, organizados por precio. Extrae datos como el título, precio, reseñas, URL, y imagen de cada producto, almacenándolos en formatos JSON/CSV. Permite automatizar la recolección de productos para análisis o comparativas.",
+    technologies: [
+      "python",
+      "requests",
+      "lxml",
+      "json",
+      "csv",
+    ],
+    features: [
+      "Scraping de productos desde Mercado Libre",
+      "Filtrado por precios más baratos y más caros",
+      "Soporte para paginación",
+      "Guardado de datos en formatos JSON y CSV",
+    ],
+    imageUrl: "/captura_proyecto/script_webscraping.webp",
+    repoUrl: "https://github.com/guccho6w9/Me_li_Webscraping-test",
+    websiteUrl: "",
+  },
+
+  {
     title: "App web de clima y noticias",
     description:
       "El objetivo del proyecto fue desarrollar una aplicacion web que pueda brindar informacion sobre el clima y noticias de una ciudad y pais a eleccion en tiempo real y en un formato amigable. Hace uso de News api y de la api Openweather para brindar informacion.",
@@ -143,6 +187,8 @@ type Technology =
   | "sequelize"
   | "sql"
   | "ejs"
+  | "csv"
+  | "json"
   | "bootstrap";
 
 const techIcons: { [key in Technology]: string } = {
@@ -160,6 +206,8 @@ const techIcons: { [key in Technology]: string } = {
   bootstrap: "/iconos/bootstrap.svg",
   tailwind: "/iconos/tailwind.svg",
   css3: "/iconos/css3.svg",
+  json: "/iconos/json.svg",
+  csv: "/iconos/csv.svg",
 };
 
 interface Project {
@@ -201,7 +249,7 @@ const ProjectCard = ({
       <h3 className="text-2xl font-extrabold font-barlow">{title}</h3>
       
       {/* Descripción con altura fija */}
-      <p className="mb-4 mt-2 h-32 font-bold overflow-hidden">{description}</p>
+      <p className="mb-4 mt-2 h-42 font-bold overflow-hidden">{description}</p>
 
       <div className="mb-4 font-extrabold font-barlow">
         <ul className="list-disc list-inside space-y-1">
