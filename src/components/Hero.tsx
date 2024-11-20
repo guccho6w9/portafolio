@@ -57,7 +57,7 @@ const Hero = () => {
         {/* Botón de Curriculum e Iconos de Contacto */}
         <div className="flex flex-col md:flex-row items-center md:items-start md:space-x-4">
           <a
-            href="https://drive.google.com/file/d/1MFCwAY8m4XfFrI9TJq5-vxsp2k5ld0_p/view?usp=sharing"
+            href="https://drive.google.com/file/d/1POEMdQz_oxytAZ9Qk0VPlfJetHtJ_zu4/view?usp=sharing"
             className={`inline-block mb-4 md:mb-0 ${
               isDarkMode
                 ? "text-white bg-teal-500 hover:bg-teal-700"
